@@ -8,7 +8,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 
 import NewPriceTargetFields from "./new_price_target_fields";
 
-import axios from "axios";
+import { createPriceTarget } from "../../actions/price_targets.js";
 
 const NewPriceTarget = ({ updateListCallback }) => {
   const defaultPriceTarget = {
@@ -26,12 +26,9 @@ const NewPriceTarget = ({ updateListCallback }) => {
   };
 
   const newPriceTarget = (priceTarget) => {
-    axios
-      .post(`${process.env.REACT_APP_SERVER_URL}/price_targets/new`, {
-        priceTarget: priceTarget,
-      })
+    createPriceTarget(priceTarget)
       .then((response) => {
-        updateListCallback();
+        updateListCallback(response);
       })
       .catch((error) => console.log(error));
   };

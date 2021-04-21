@@ -7,6 +7,15 @@ export const getPriceTargets = () => {
     .catch((error) => console.log(error));
 };
 
+export const createPriceTarget = (newPriceTarget) => {
+  return axios
+    .post(`${process.env.REACT_APP_SERVER_URL}/price_targets/new`, {
+      priceTarget: newPriceTarget,
+    })
+    .then((response) => response.data)
+    .catch((error) => console.log(error));
+};
+
 export const deletePriceTarget = (priceTarget_id) => {
   return axios
     .post(

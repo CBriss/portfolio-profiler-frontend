@@ -25,7 +25,7 @@ const NewCompanyFields = ({ company, setCompany }) => {
 
   return (
     <>
-      <img width="100px" height="100px" src={company.logo} />
+      <img width="100px" height="100px" src={company.logo} alt="" />
       <BasicTextField
         id="name"
         label="Name"

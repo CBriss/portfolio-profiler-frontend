@@ -1,12 +1,11 @@
 import React from "react";
 
 import {
-  Button,
   Card,
-  CardActions,
   CardHeader,
   CardContent,
   IconButton,
+  Typography,
 } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 
@@ -33,12 +32,11 @@ const CompanyCard = ({
         className="company-card-header"
       />
       <CardContent>
-        <h5>Latest Price: ${latestPrice}</h5>
-        <h5>Sector: {sector}</h5>
+        <Typography variant="subtitle2">
+          Latest Price: ${latestPrice}
+        </Typography>
+        <Typography variant="caption">Sector: {sector}</Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">Details</Button>
-      </CardActions>
     </Card>
   );
 };

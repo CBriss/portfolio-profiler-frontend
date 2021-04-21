@@ -27,9 +27,6 @@ const App = () => {
             <Link to="/companies" style={linkStyles}>
               Companies
             </Link>
-            <Link to="/price-targets" style={linkStyles}>
-              Price Targets
-            </Link>
           </Toolbar>
         </AppBar>
         <Toolbar />
@@ -37,11 +34,8 @@ const App = () => {
           <Route path="/companies">
             <CompanyList />
           </Route>
-          <Route path="/price-targets">
-            <PriceTargetList />
-          </Route>
           <Route exact path="/">
-            <h1>Homepage</h1>
+            <PriceTargetList />
           </Route>
           <Route path="*">
             <h1>Error Page</h1>

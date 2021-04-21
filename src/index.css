@@ -40,7 +40,7 @@ body {
 }
 
 .company-card-image {
-  min-height: 80px;
+  min-height: 30px;
   max-height: 100px;
   min-width: 80px;
   max-width: 125px;
@@ -66,4 +66,12 @@ body {
   margin: 5rem auto;
   display: grid;
   gap: 2rem;
+}
+
+
+.error-section {
+  margin: 100px auto;
+  left: 0;
+  right: 0;
+  width: fit-content;
 }

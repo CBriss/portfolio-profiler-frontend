@@ -5,7 +5,7 @@ import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import Select from "@material-ui/core/Select";
 
-import axios from "axios";
+import { listCompanies } from "../../actions/companies";
 
 const NewPriceTargetFields = ({ priceTarget, setPriceTarget }) => {
   const [companyList, setCompanyList] = useState({});
@@ -22,9 +22,11 @@ const NewPriceTargetFields = ({ priceTarget, setPriceTarget }) => {
   }, []);
 
   const getCompanyList = () => {
-    axios.get("http://localhost:5000/companies/list").then((response) => {
-      setCompanyList(response.data);
-    });
+    listCompanies()
+      .then((response) => {
+        setCompanyList(response);
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -41,7 +43,11 @@ const NewPriceTargetFields = ({ priceTarget, setPriceTarget }) => {
       >
         <option value=""></option>
         {Object.entries(companyList).map(([name, id]) => {
-          return <option value={id}>{name}</option>;
+          return (
+            <option key={id} value={id}>
+              {name}
+            </option>
+          );
         })}
       </Select>
       <TextField
