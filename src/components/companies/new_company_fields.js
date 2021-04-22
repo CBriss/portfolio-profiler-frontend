@@ -21,7 +21,7 @@ const NewCompanyFields = ({ company, setCompany }) => {
     console.log(isURL(website));
     if (isURL(website))
       setCompany({ ...company, logo: `//logo.clearbit.com/${website}` });
-  }, [website]);
+  }, [website, setCompany, company]);
 
   return (
     <>
