@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import TextField from "@material-ui/core/textField";
-import FormControl from "@material-ui/core/FormControl";
-import InputLabel from "@material-ui/core/InputLabel";
-import Select from "@material-ui/core/Select";
+import { TextField, FormControl, InputLabel, Select } from "@material-ui/core";
 
 import { listCompanies } from "../../actions/companies";
 

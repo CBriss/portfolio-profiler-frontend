@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import TextField from "@material-ui/core/textField";
+import { TextField } from "@material-ui/core";
 import BasicTextField from "../lib/basic_text_field";
 
 import isURL from "validator/lib/isURL";
