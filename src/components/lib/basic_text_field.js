@@ -1,5 +1,5 @@
 import React from "react";
-import TextField from "@material-ui/core/textField";
+import { TextField } from "@material-ui/core";
 
 const BasicTextField = ({ id, label, value, onChangeCallback }) => {
   return (
