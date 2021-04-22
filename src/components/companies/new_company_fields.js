@@ -17,11 +17,14 @@ const NewCompanyFields = ({ company, setCompany }) => {
     setCompany({ ...company, [valueName]: value });
   };
 
+  const updateCompanyLogo = () => {
+    setCompany({ ...company, logo: `//logo.clearbit.com/${website}` });
+  };
+
   useEffect(() => {
     console.log(isURL(website));
-    if (isURL(website))
-      setCompany({ ...company, logo: `//logo.clearbit.com/${website}` });
-  }, [website, setCompany, company]);
+    if (isURL(website)) updateCompanyLogo();
+  }, [website]);
 
   return (
     <>
