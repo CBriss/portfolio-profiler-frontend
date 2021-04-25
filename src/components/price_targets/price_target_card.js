@@ -23,17 +23,24 @@ const PriceTargetCard = ({
   )}%`;
   const defaultSellValue = `High 5-Year Estimate: ${Math.round(
     ((highEstimate5Yr - company.latestPrice) * 100) / company.latestPrice
-  )}% `;
+  )}%`;
 
   return (
     <Paper variant="outlined">
-      <Grid container spacing={2}>
+      <Grid container justify="space-around" alignItems="center">
         <Grid item>
           <ButtonBase>
             <img height="75" src={company.logo} alt="" />
           </ButtonBase>
         </Grid>
-        <Grid item xs={12} sm container>
+        <Grid
+          item
+          xs={12}
+          sm
+          container
+          justify="space-around"
+          alignItems="center"
+        >
           <Grid item xs container direction="column" spacing={2}>
             <Grid item xs>
               <Typography gutterBottom variant="subtitle1">
@@ -48,11 +55,11 @@ const PriceTargetCard = ({
         <Grid item xs={12} sm>
           <HoverableText
             default_value={defaultBuyValue}
-            hover_value={`Buy Target: $${lowEstimate5Yr}`}
+            hover_value={`Low 5-Year Target: $${lowEstimate5Yr}`}
           />
           <HoverableText
             default_value={defaultSellValue}
-            hover_value={`Sell Target: $${highEstimate5Yr}`}
+            hover_value={`High 5-Year Target: $${highEstimate5Yr}`}
           />
         </Grid>
         <Grid item>
